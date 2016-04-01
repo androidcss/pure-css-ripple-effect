@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pure css ripple effect</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<style type="text/css">
+* {
+	padding:0;
+	margin:0;
+}
+
+body {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:18px;
+	background-color:#FFF;
+	padding:50px;
+	background-color:#EEE;
+}
+
+.ripple-button1, .ripple-button2{
+	position:relative;
+	width:150px;
+	height:75px;
+	background-color:#99C;
+	color:#FFF;
+	border-radius:3px;
+	text-decoration:none;
+	text-align:center;
+	vertical-align:middle;
+	display:table-cell;
+}
+
+.wave1{
+	position:absolute;
+	width:75px;
+	height:75px;
+	background-color:#FFF;
+	top:0;
+	left:35px;
+	transform: scale(0);
+	opacity:0.5;
+	border-radius:300px;
+}
+
+.wave2{
+	position:absolute;
+	width:150px;
+	height:75px;
+	background-color:#FFF;
+	top:0;
+	left:0;
+	transform: scale(0);
+	opacity:0.5;
+}
+
+.ripple-button1:hover > .wave1{
+	animation: ripple-in1 2s;
+}
+
+.ripple-button2:hover > .wave2{
+	animation: ripple-in2 2s;
+}
+
+ 
+@keyframes ripple-in1 {
+ 0% {transform: scale(0);}
+ 20%{transform: scale(1);opacity:0.3;}
+ 100%{transform: scale(1);opacity:0;}
+}
+
+@keyframes ripple-in2 {
+ 0% {transform: scaleX(0);}
+ 20%{transform: scaleX(1);opacity:0.3;}
+ 100%{transform: scaleX(1);opacity:0;}
+}
+
+</style>
+</head>
+<body>
+<a href="#" class="ripple-button1"><div class="wave1"></div>Ripple1</a>
+&nbsp;&nbsp;
+<a href="#" class="ripple-button2"><div class="wave2"></div>Ripple2</a>
+</body>
+</html>
